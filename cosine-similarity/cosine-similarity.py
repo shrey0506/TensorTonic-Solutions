@@ -8,8 +8,10 @@ def cosine_similarity(a, b):
     # Write code here
     a,b = np.array(a),np.array(b)
     dot_p = np.dot(a,b)
-    norma = np.linalg.norm(a)
-    normb = np.linalg.norm(b)
+    # norma = np.linalg.norm(a)
+    # normb = np.linalg.norm(b)
+    norma = np.sqrt(np.sum(a**2))
+    normb = np.sqrt(np.sum(b**2))
     if norma==0 or normb==0:
         return 0.0
     cos_sim = dot_p/(norma*normb)
